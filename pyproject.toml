@@ -1,0 +1,34 @@
+[project]
+name = "news-agent"
+version = "0.1.0"
+description = "Daily AI news digest built with Claude agents"
+readme = "README.md"
+authors = [
+    { name = "Neal", email = "hyunjoon.lee0213@gmail.com" }
+]
+requires-python = ">=3.14"
+dependencies = [
+    "pydantic>=2.14.1",
+    "pydantic-settings>=2.16.0",
+]
+
+[project.scripts]
+news-agent = "news_agent:main"
+
+[build-system]
+requires = ["uv_build>=0.13.1,<0.14.0"]
+build-backend = "uv_build"
+
+[dependency-groups]
+dev = [
+    "pre-commit>=4.7.0",
+    "pytest>=9.1.1",
+    "ruff>=0.17.0",
+    "ty>=0.0.87",
+]
+[tool.ruff]
+line-length = 100
+target-version = "py314"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B"]
